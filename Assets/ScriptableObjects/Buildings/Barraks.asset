@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c99471e9224ab849ad20314f545ff58, type: 3}
+  m_Name: Barraks
+  m_EditorClassIdentifier: 
+  type: 0
+  name: 
+  buildingPrefab: {fileID: 7332418654490492535, guid: 9aebe3dfa99a686419f753b1fe2433aa,
+    type: 3}
+  Units:
+    basicUnits:
+    - {fileID: 11400000, guid: bc243034f60d3ba44b22b3acccbeb7a4, type: 2}
+  baseStats:
+    health: 500
+    armor: 25
+    attack: 0

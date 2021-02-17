@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6e9caaa4afc11d745a31a653d5bb5b1b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - worker: {fileID: 11400000, guid: 89351fe0225010b4b9deb6698dab938c, type: 2}
+  - warrior: {fileID: 11400000, guid: bc243034f60d3ba44b22b3acccbeb7a4, type: 2}
+  - healer: {fileID: 11400000, guid: c208fa18901d2ea4394b75057e144e95, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
