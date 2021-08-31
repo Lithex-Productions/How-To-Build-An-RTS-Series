@@ -37,6 +37,7 @@ namespace LP.FDG.InputManager
 
         public void HandleUnitMovement()
         {
+            //If you left click
             if (Input.GetMouseButtonDown(0))
             {
                 mousePos = Input.mousePosition;
@@ -45,7 +46,11 @@ namespace LP.FDG.InputManager
                 // check if we hit something
                 if (Physics.Raycast(ray, out hit, 100, interactableLayer))
                 {
-                    if (addedUnit(hit.transform, Input.GetKey(KeyCode.LeftShift)))
+                    if (addedUnit(hit.transform, Input.GetKey(KeyCode.LeftShift), Input.GetKey(KeyCode.LeftControl)))
+                    {
+                        // be able to do stuff with every single unit
+                    }
+                    else if (addedUnit(hit.transform, Input.GetKey(KeyCode.LeftShift)))
                     {
                         // be able to do stuff with units
                     }
@@ -76,6 +81,7 @@ namespace LP.FDG.InputManager
                 isDragging = false;
             }
 
+            //if you right click
             if (Input.GetMouseButtonDown(1) && HaveSelectedUnits())
             {
                 //create a ray 
@@ -145,10 +151,56 @@ namespace LP.FDG.InputManager
             }
         }
 
-        private Interactables.IUnit addedUnit(Transform tf, bool canMultiselect = false)
+        
+        //Shout out to Martin Klausen
+        private Interactables.IUnit addedUnit(Transform tf, bool canMultiSelect = false, bool selectAllOfType = false)
         {
             Interactables.IUnit iUnit = tf.GetComponent<Interactables.IUnit>();
             if (iUnit)
+            {
+                if (!canMultiSelect)
+                {
+                    DeselectUnits();
+                }
+                if (selectAllOfType)
+                {
+                    Transform unitParent = tf.parent.gameObject.transform;
+
+                    foreach (Transform unit in unitParent)
+                    {
+                        Interactables.IUnit iCurrentUnit = unit.GetComponent<Interactables.IUnit>();
+                        selectedUnits.Add(iCurrentUnit.gameObject.transform);
+                        iCurrentUnit.OnInteractEnter();
+                    }
+                }
+                else
+                {
+                    if (selectedUnits.Contains(iUnit.gameObject.transform) && canMultiSelect && !isDragging)
+                    {
+                        selectedUnits.Remove(iUnit.gameObject.transform);
+                        iUnit.OnInteractExit();
+                        return null;
+                    }
+                    else
+                    {
+                        selectedUnits.Add(iUnit.gameObject.transform);
+                        iUnit.OnInteractEnter();
+                    }
+                }
+                return iUnit;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+        
+        /*
+        private Interactables.IUnit addedUnit(Transform tf, bool canMultiselect = false)
+        {
+            Interactables.IUnit iUnit = tf.GetComponent<Interactables.IUnit>();
+            if(iUnit)
             {
                 if (!canMultiselect)
                 {
@@ -166,7 +218,8 @@ namespace LP.FDG.InputManager
                 return null;
             }
         }
-
+        */
+        
         private Interactables.IBuilding addedBuilding(Transform tf)
         {
             Interactables.IBuilding iBuilding = tf.GetComponent<Interactables.IBuilding>();
