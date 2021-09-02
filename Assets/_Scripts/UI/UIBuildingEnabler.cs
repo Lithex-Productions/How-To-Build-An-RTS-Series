@@ -1,6 +1,6 @@
 ﻿﻿using UnityEngine;
 
-namespace LP.LDG.UI
+namespace LP.FDG.UI
 {
     public class UIBuildingEnabler : MonoBehaviour
     {
