@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 
 namespace LP.LDG.UI
 {
@@ -16,4 +16,3 @@ namespace LP.LDG.UI
         }
     }
 }
-
