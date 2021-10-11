@@ -69,7 +69,7 @@ namespace LP.FDG.Units
         {
             if (isPlayerUnit)
             {
-                InputManager.InputHandler.instance.selectedUnits.Remove(gameObject.transform);
+                InputManager.InputHandler.instance.selectedUnits.Remove(gameObject.transform.parent);
                 Destroy(gameObject.transform.parent.gameObject);
             }
             else

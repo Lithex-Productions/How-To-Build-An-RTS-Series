@@ -109,16 +109,19 @@ namespace LP.FDG.InputManager
 
         private void DeselectUnits()
         {
-            if (selectedBuilding)
+            if (selectedBuilding != null)
             {
                 selectedBuilding.gameObject.GetComponent<Interactables.IBuilding>().OnInteractExit();
                 selectedBuilding = null;
             }
-            for (int i = 0; i < selectedUnits.Count; i++)
+            if (selectedUnits.Count > 0)
             {
-                selectedUnits[i].gameObject.GetComponent<Interactables.IUnit>().OnInteractExit();
+                for (int i = 0; i < selectedUnits.Count; i++)
+                {
+                    selectedUnits[i].gameObject.GetComponent<Interactables.IUnit>().OnInteractExit();
+                }
+                selectedUnits.Clear();
             }
-            selectedUnits.Clear();
         }
 
         private bool isWithinSelectionBounds(Transform tf)
@@ -173,16 +176,18 @@ namespace LP.FDG.InputManager
 
             if (iBuilding)
             {
+                Debug.Log(iBuilding.gameObject.name);
                 DeselectUnits();
-
+                
                 selectedBuilding = iBuilding.gameObject.transform;
 
-                iBuilding.OnInteractEnter();
+                selectedBuilding.gameObject.GetComponent<Interactables.IBuilding>().OnInteractEnter();
 
                 return iBuilding;
             }
             else
             {
+
                 return null;
             }
         }

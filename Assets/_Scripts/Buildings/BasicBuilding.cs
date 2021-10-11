@@ -16,7 +16,6 @@ namespace LP.FDG.Buildings
         public buildingType type;
         public new string name;
         public GameObject buildingPrefab;
-        public BuildingActions.BuildingUnits Units;
 
         [Space(15)]
         [Header("Building Base Stats")]

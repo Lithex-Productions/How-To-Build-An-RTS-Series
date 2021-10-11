@@ -20,9 +20,9 @@ MonoBehaviour:
     type: 3}
   baseStats:
     cost: 100
-    aggroRange: 110
+    aggroRange: 10
     atkRange: 1
     atkSpeed: 0.5
-    attack: 50
+    attack: 10
     health: 100
     armor: 5
