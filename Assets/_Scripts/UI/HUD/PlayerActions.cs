@@ -9,12 +9,12 @@ namespace LP.FDG.UI.HUD
     {
         [Space(5)]
         [Header("Units")]
-        public Units.BasicUnit[] basicUnits = new Units.BasicUnit[0];
+        public List<Units.BasicUnit> basicUnits = new List<Units.BasicUnit>();
 
         [Space(5)]
         [Header("Buildings")]
         [Space(15)]
-        public Buildings.BasicBuilding[] basicBuildings = new Buildings.BasicBuilding[0];
+        public List<Buildings.BasicBuilding> basicBuildings = new List<Buildings.BasicBuilding>();
     }
 }
 

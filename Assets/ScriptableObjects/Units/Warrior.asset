@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 3}
   infectedPrefab: {fileID: 5701738939726210844, guid: 8298f1806f3d6dd4fa4e99664aea1e59,
     type: 3}
+  icon: {fileID: 1725642304771962204, guid: 4cafe11094a6c62478e6bda127a2d669, type: 3}
+  spawnTime: 5
   baseStats:
     cost: 100
     aggroRange: 10

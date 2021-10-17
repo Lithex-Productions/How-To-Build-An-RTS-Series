@@ -8,7 +8,7 @@ namespace LP.FDG.Interactables
 
         public override void OnInteractEnter()
         {
-            UI.HUD.ActionFrame.instance.SetActionButtons(actions);
+            UI.HUD.ActionFrame.instance.SetActionButtons(actions, gameObject);
             base.OnInteractEnter();
         }
 

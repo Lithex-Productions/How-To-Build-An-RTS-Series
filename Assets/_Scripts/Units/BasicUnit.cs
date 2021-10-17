@@ -21,6 +21,8 @@ namespace LP.FDG.Units
         public new string name;
         public GameObject humanPrefab;
         public GameObject infectedPrefab;
+        public GameObject icon;
+        public float spawnTime;
 
         [Space(15)]
         [Header("Unit Base Stats")]

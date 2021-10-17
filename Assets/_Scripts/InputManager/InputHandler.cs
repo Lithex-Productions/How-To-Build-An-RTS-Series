@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LP.FDG.Units.Player;
+using UnityEngine.EventSystems;
 
 namespace LP.FDG.InputManager
 {
@@ -39,6 +40,11 @@ namespace LP.FDG.InputManager
         {
             if (Input.GetMouseButtonDown(0))
             {
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    return;
+                }
+
                 mousePos = Input.mousePosition;
                 //create a ray 
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

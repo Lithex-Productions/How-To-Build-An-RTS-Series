@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2075817243583659047}
   - component: {fileID: 7464915263135154074}
   - component: {fileID: 7564553961831442156}
+  - component: {fileID: -3517262256792149054}
   m_Layer: 5
   m_Name: Action
   m_TagString: Untagged
@@ -119,4 +120,28 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7464915263135154074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -3517262256792149054}
+        m_TargetAssemblyTypeName: LP.FDG.UI.HUD.Action, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-3517262256792149054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002070827498284098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9982abe05e9e15c4cac480d8a4ede23a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
